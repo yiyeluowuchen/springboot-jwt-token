@@ -1,0 +1,30 @@
+
+#端口号
+server:
+  port: 8088
+
+#数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: zhang
+
+
+#dao和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yiyezhiqiu.jwt.jwt.domain
+
+
+#可以打印出sql语句
+logging:
+  level:
+    com:
+      yiyezhiqiu:
+        jwt:
+          jwt:
+           dao: debug
+
+

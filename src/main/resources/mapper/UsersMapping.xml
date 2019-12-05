@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiyezhiqiu.jwt.jwt.dao.UsersDao">
+
+    <insert id = "saveUsers" parameterType="com.yiyezhiqiu.jwt.jwt.domain.Users" keyProperty="id" useGeneratedKeys="true">
+        insert into users(user_name,password,gender) values (#{userName},#{password},#{gender})
+    </insert>
+
+    <select id="findUsers" parameterType="java.util.HashMap" resultType="com.yiyezhiqiu.jwt.jwt.domain.Users">
+
+    select * from users where
+     user_name = #{userName}
+    <if test="password != null and password != ''">
+        and password = #{password}
+    </if>
+
+    </select>
+
+
+
+
+</mapper>
