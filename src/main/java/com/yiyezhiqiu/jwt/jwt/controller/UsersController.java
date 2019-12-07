@@ -41,7 +41,6 @@ import javax.annotation.Resource;
  *
  */
 
-
 @Slf4j
 @RestController
 @RequestMapping(value = "/users")
@@ -97,7 +96,6 @@ public class UsersController {
     return jsonObject;
     }
 
-
     /**
      * 其他页面
      * @return
@@ -111,11 +109,6 @@ public class UsersController {
        jsonObject.put("code",200);
         return jsonObject;
     }
-
-
-
-
-
 
 
 }

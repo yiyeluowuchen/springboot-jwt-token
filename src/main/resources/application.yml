@@ -1,9 +1,7 @@
 
-#端口号
 server:
   port: 8088
 
-#数据库
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -11,14 +9,12 @@ spring:
     username: root
     password: zhang
 
-
-#dao和xml映射
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.yiyezhiqiu.jwt.jwt.domain
+  configuration:
+    map-underscore-to-camel-case: true
 
-
-#可以打印出sql语句
 logging:
   level:
     com:

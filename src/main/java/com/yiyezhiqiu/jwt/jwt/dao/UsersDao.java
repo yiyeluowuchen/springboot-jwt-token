@@ -17,17 +17,11 @@ public interface UsersDao {
 
     public int saveUsers(Users users);
 
-
-
     /**
      * 查询用户
      */
 
     public Users findUsers (Map<String,Object> params);
-
-
-
-
 
 }
 

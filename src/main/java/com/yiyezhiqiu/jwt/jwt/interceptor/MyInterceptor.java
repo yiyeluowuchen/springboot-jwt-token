@@ -39,11 +39,12 @@ public class MyInterceptor implements HandlerInterceptor {
 
     @Autowired
     UsersDao usersDao;
-    private static MyInterceptor myInterceptor;
+
 
     /**
      * 这一段用来解决依赖注入不成功问题
      */
+    private static MyInterceptor myInterceptor;
     @PostConstruct
     public void init (){
         myInterceptor = this;

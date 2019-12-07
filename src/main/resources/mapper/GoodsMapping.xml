@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiyezhiqiu.jwt.jwt.dao.GoodsDao">
+
+<!--这里
+    IFNULL（A,B） 意思是如果A不为空，则为A，否则为B
+    CONCAT(多个IFNULL)实现一个框就可以分别对多个字段进行模糊查询
+-->
+    <select id="findAll"  resultType="com.yiyezhiqiu.jwt.jwt.domain.Goods">
+        select * from goods
+        <where>
+            <if test= "fuzzy != null">
+                IFNULL(goods_type ," ") like  "%"#{fuzzy}"%"
+            </if>
+            <if test="nextFuzzy != null">
+            and CONCAT(IFNULL(goods_price," "),IFNULL(goods_shape," ")) like  "%"#{nextFuzzy}"%"
+            </if>
+
+        </where>
+    </select>
+
+</mapper>
